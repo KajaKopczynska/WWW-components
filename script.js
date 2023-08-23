@@ -1,5 +1,6 @@
-const btns = document.querySelectorAll('.btn')
+// 1 pulsating buttons
 
+const btns = document.querySelectorAll('.btn')
 
 const btnAnimation = e => {
     const top = e.clientY
@@ -27,3 +28,68 @@ const btnAnimation = e => {
 }
 
 btns.forEach(btn => btn.addEventListener('click', btnAnimation))
+
+//2 search bar animation
+const searchBtn = document.querySelector('.search-btn')
+const input = document.querySelector('.search-input')
+
+const showSearchBar = () => {
+    input.classList.toggle('active')
+}
+
+searchBtn.addEventListener('click', showSearchBar)
+
+// 3 colorful board
+
+const box = document.querySelector('.box')
+const speedBtns = document.querySelectorAll('[data-setting="speed"]')
+const colorBtns = document.querySelectorAll('[data-setting="color"]')
+const slider = document.querySelector('#slider')
+const sliderInfo = document.querySelector('.slider-info')
+
+const squares = 546
+let sliderValue = 70
+let range = 360
+
+const createSquare = speed => {
+    box.innerHTML = ''
+
+    for (let i = 0; i < squares; i++) {
+        const square = document.createElement('div')
+        square.classList.add('square')
+        square.style.transitionDuration = speed
+
+        square.addEventListener('mouseover', () => setColor(square))
+        square.addEventListener('mouseout', () => removeColor(square))
+
+        box.appendChild(square)
+    }
+}
+
+const setColor = square => {
+    let h
+
+    if (range === 360) {
+        h = Math.floor(Math.random() * 360)
+    } else {
+        h = Math.floor(Math.random() * 60) + range
+    }
+
+    const s = slider.value + '%'
+    const l = '50%'
+
+    square.style.backgroundColor = `hsl(${h}, ${s}, ${l})`
+}
+
+const removeColor = square => {
+    square.style.backgroundColor = `transparent`
+}
+
+function handleSpeed() {
+    const newSpeed = this.dataset.speed + 's'
+    createSquare(newSpeed)
+
+}
+
+speedBtns.forEach(btn => btn.addEventListener('click', handleSpeed))
+createSquare()
