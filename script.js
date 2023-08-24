@@ -88,8 +88,17 @@ const removeColor = square => {
 function handleSpeed() {
     const newSpeed = this.dataset.speed + 's'
     createSquare(newSpeed)
+}
 
+function handleColorRange() {
+    range = parseInt(this.dataset.colorRange)
+}
+
+const showSliderInfo = () => {
+    sliderInfo.textContent = slider.value
 }
 
 speedBtns.forEach(btn => btn.addEventListener('click', handleSpeed))
+colorBtns.forEach(btn => btn.addEventListener('click', handleColorRange))
+slider.addEventListener('mousemove', showSliderInfo)
 createSquare()
