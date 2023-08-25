@@ -9,7 +9,7 @@ body {
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-	height: 100vh;
+	/* height: 100vh; */
 	font-family: 'Montserrat', sans-serif;
 	background-color: #333;
 }
@@ -116,7 +116,7 @@ body {
 	cursor: pointer;
 }
 
-.search-btn:focus, 
+.search-btn:focus,
 .search-input:focus {
 	outline: none;
 }
@@ -200,4 +200,109 @@ body {
 
 .square:hover {
 	transition-duration: 0s !important;
+}
+
+/* 4 progress indicator on the form*/
+
+.section-form {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.form-title {
+	margin-bottom: 0.5em;
+	text-transform: uppercase;
+	color: #ddd;
+}
+
+.fake-form {
+	margin-bottom: 3em;
+	width: 600px;
+	height: 300px;
+	border-radius: 6px;
+	overflow: hidden;
+}
+
+.page {
+	display: none;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	font-size: 22px;
+	background-color: #fff;
+}
+
+.page:nth-child(even) {
+	background-color: #bbb;
+}
+
+.active-page {
+	display: flex;
+}
+
+.progress-box {
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 3em;
+	width: 600px;
+}
+
+.progress-box::before {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	height: 4px;
+	width: 100%;
+	background-color: #ddd;
+	z-index: -1;
+	content: '';
+}
+
+.progress-bar {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	height: 4px;
+	width: 0%;
+	background-color: royalblue;
+	z-index: -1;
+	transition: width .3s;
+}
+
+.step {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 48px;
+	width: 48px;
+	color: #333;
+	background-color: #fff;
+	border: 3px solid #ddd;
+	border-radius: 6px;
+}
+
+.active-step {
+	background-color: royalblue;
+	color: #fff;
+	border-color: rgb(48, 77, 163);
+}
+
+.progress-btn {
+	padding: 0.7em 2em;
+	font-size: 20px;
+	color: #fff;
+	background-color: royalblue;
+	border: none;
+	border-radius: 6px;
+	cursor: pointer;
+}
+
+.progress-btn:disabled {
+	background-color: #ddd;
+	color: #333;
+	cursor: default;
 }

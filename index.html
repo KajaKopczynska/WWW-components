@@ -14,7 +14,7 @@
 <body>
 
     <div class="container">
-        <!-- pulsating buttons -->
+        <!-- 1 pulsating buttons -->
         <div class="section">
             <button class="btn">Kliknij mnie!
                 <span class="circle"></span>
@@ -27,7 +27,7 @@
             </button>
         </div>
         <br>
-        <!-- search bar animation -->
+        <!-- 2 search bar animation -->
         <div class="section">
             <nav class="nav">
                 <div class="nav-items">
@@ -42,7 +42,7 @@
                 </div>
             </nav>
         </div>
-        <!-- colorful board -->
+        <!-- 3 colorful board -->
         <div class="section">
 
             <div class="buttons-wrapper">
@@ -67,7 +67,7 @@
                 <input type="range" value="70" min="0" max="100" id="slider">
                 <p>Saturation: <span class="slider-info">70</span>%</p>
             </div>
-    
+
             <div class="box">
                 <div class="square"></div>
             </div>
@@ -75,7 +75,34 @@
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <!-- 4 progress indicator on the form -->
+    <div class="section section-form">
+        <h1 class="form-title">fake form</h1>
+        <div class="fake-form">
+            <div class="page active-page" data-number="1">Form #1</div>
+            <div class="page" data-number="2">Form #2</div>
+            <div class="page" data-number="3">Form #3</div>
+            <div class="page" data-number="4">Form #4</div>
+            <div class="page" data-number="5">Form #5</div>
+        </div>
+        <div class="progress-box">
+            <div class="progress-bar"></div>
+            <div class="step active-step">1</div>
+            <div class="step">2</div>
+            <div class="step">3</div>
+            <div class="step">4</div>
+            <div class="step">5</div>
+        </div>
+
+        <div class="buttons-box">
+            <button class="button progress-btn progress-btn-prev" disabled>⇦</button>
+            <button class="button progress-btn progress-btn-next">⇨</button>
+        </div>
+    </div>
+
+    <script src="script.js">
+
+    </script>
 </body>
 
 </html>
