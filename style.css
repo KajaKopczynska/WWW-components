@@ -306,3 +306,60 @@ body {
 	color: #333;
 	cursor: default;
 }
+
+/* 5 accordion */
+
+.accordion-info-text {
+	margin-bottom: 0.5em;
+}
+
+.fas,
+.fa {
+	margin-right: 20px;
+	color: cadetblue;
+}
+
+.accordion {
+	width: 800px;
+	background-color: #fff;
+	border-radius: 6px;
+}
+
+.accordion-box {
+	margin: 20px;
+}
+
+.accordion-btn {
+	padding: 1em;
+	width: 100%;
+	font-size: 30px;
+	text-align: left;
+	border: none;
+	border-radius: 8px;
+	transition: background-color .3s;
+	cursor: pointer;
+}
+
+.accordion-btn:hover,
+.accordion-btn:focus {
+	background-color: cadetblue;
+	color: #fff;
+	outline: none;
+}
+
+.accordion-btn:hover .fas,
+.accordion-btn:hover .fa,
+.accordion-btn:focus .fas,
+.accordion-btn:focus .fa {
+	color: #fff;
+}
+
+.accordion-info {
+	display: none;
+	padding: 1em 30px;
+	margin-left: 60px;
+}
+
+.active {
+	display: block;
+}

@@ -172,3 +172,36 @@ const handleFormPage = () => {
 
 nextBtn.addEventListener('click', handleNextBtn)
 prevBtn.addEventListener('click', handlePrevBtn)
+
+//5 accordion 
+
+const accordion = document.querySelector('.accordion')
+const accordionBtns = document.querySelectorAll('.accordion-btn')
+
+const openAccordionItems = (event) => {
+    if (event.currentTarget.nextElementSibling.classList.contains('active')) {
+        event.currentTarget.nextElementSibling.classList.remove('active')
+
+    } else {
+        closeAccordionItems()
+        event.currentTarget.nextElementSibling.classList.toggle('active')
+    }
+}
+
+const closeAccordionItems = () => {
+    const allActiveItems = document.querySelectorAll('.accordion-info')
+    allActiveItems.forEach(item => item.classList.remove('active'))
+}
+
+const clickOutsideAccordion = e => {
+    if (
+        e.target.classList.contains('accordion-btn') ||
+        e.target.classList.contains('accordion-info') ||
+        e.target.classList.contains('accordion-info-text')
+    ) return
+    closeAccordionItems()
+}
+
+accordionBtns.forEach(btn => btn.addEventListener('click', openAccordionItems))
+
+window.addEventListener('click', clickOutsideAccordion)
