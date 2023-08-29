@@ -30,6 +30,7 @@ const btnAnimation = e => {
 btns.forEach(btn => btn.addEventListener('click', btnAnimation))
 
 //2 search bar animation
+
 const searchBtn = document.querySelector('.search-btn')
 const input = document.querySelector('.search-input')
 
@@ -205,3 +206,50 @@ const clickOutsideAccordion = e => {
 accordionBtns.forEach(btn => btn.addEventListener('click', openAccordionItems))
 
 window.addEventListener('click', clickOutsideAccordion)
+
+// 6 slider
+
+const sliderBox = document.querySelector('.sliderr-box')
+const leftBtn = document.querySelector('.sliderr-btn-left')
+const rightBtn = document.querySelector('.sliderr-btn-right')
+const carouselImages = document.querySelectorAll('.sliderr-img')
+const carouselWidth = 800
+const carouselSpeed = 3000
+
+let imageIndex = 0
+
+const handleCarousel = () => {
+    imageIndex++
+    changeImage()
+}
+
+let startCarousel = setInterval(handleCarousel, carouselSpeed)
+
+const changeImage = () => {
+    if (imageIndex > carouselImages.length - 1) {
+        imageIndex = 0
+    } else if (imageIndex < 0) {
+        imageIndex = carouselImages.length - 1
+    }
+
+    sliderBox.style.transform = `translateX(${-imageIndex * carouselWidth}px)`
+}
+
+const handleRightBtn = () => {
+    imageIndex++
+    resetInterval()
+}
+
+const handleLeftBtn = () => {
+    imageIndex--
+    resetInterval()
+}
+
+const resetInterval = () => {
+    changeImage()
+    clearInterval(startCarousel)
+	startCarousel = setInterval(handleCarousel, carouselSpeed)
+}
+
+rightBtn.addEventListener('click', handleRightBtn)
+leftBtn.addEventListener('click', handleLeftBtn)
