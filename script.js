@@ -253,3 +253,24 @@ const resetInterval = () => {
 
 rightBtn.addEventListener('click', handleRightBtn)
 leftBtn.addEventListener('click', handleLeftBtn)
+
+// 7 expandable slides
+
+const body = document.querySelector('.section-container')
+const cards = document.querySelectorAll('.card')
+
+function showCard() {
+    cards.forEach(card => {
+        card.classList.remove('act')
+        this.classList.add('act')
+    })
+
+    handleBgColor(this)
+}
+
+const handleBgColor = card => {
+    const season = card.getAttribute('data-season')
+    body.setAttribute('data-bg', season)
+}
+
+cards.forEach(card => card.addEventListener('click', showCard))
