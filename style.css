@@ -22,9 +22,19 @@ body {
 	padding: 50px;
 	margin-bottom: 50px;
 	border-bottom: 1px solid #666;
+
+	/* display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column; */
 }
 
 /* 1 pulsating buttons*/
+
+.buttons-wrapper {
+	display: flex;
+	flex-direction: row;
+}
 
 .btn {
 	position: relative;
@@ -358,6 +368,7 @@ body {
 	display: none;
 	padding: 1em 30px;
 	margin-left: 60px;
+	color: #333;
 }
 
 .active {
@@ -580,4 +591,56 @@ body {
 	to {
 		opacity: 1;
 	}
+}
+
+/* 8 animated text */
+
+.btn8 {
+	padding: 0.5em 1em;
+	font-size: 1.6rem;
+	border: none;
+	border-radius: 6px;
+	background-color: #e5e5e5;
+	cursor: pointer;
+}
+
+p {
+	font-size: 3rem;
+	color: #fff;
+}
+
+.modal-btn8 {
+	/* position: absolute; */
+	top: 200px;
+}
+
+.modal {
+	display: none;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	/* position: absolute; */
+	top: 200px;
+	padding: 2em;
+	width: 600px;
+	height: 200px;
+	background-color: #fff;
+	border-radius: 6px;
+}
+
+.modal-input {
+	padding: 1em;
+	width: 100%;
+	font-size: 1rem;
+	border-radius: 6px;
+}
+
+.error-msg {
+	margin: 1em 0;
+	font-size: 1rem;
+	color: tomato;
+}
+
+.active8 {
+	display: flex;
 }

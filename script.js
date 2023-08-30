@@ -248,7 +248,7 @@ const handleLeftBtn = () => {
 const resetInterval = () => {
     changeImage()
     clearInterval(startCarousel)
-	startCarousel = setInterval(handleCarousel, carouselSpeed)
+    startCarousel = setInterval(handleCarousel, carouselSpeed)
 }
 
 rightBtn.addEventListener('click', handleRightBtn)
@@ -274,3 +274,55 @@ const handleBgColor = card => {
 }
 
 cards.forEach(card => card.addEventListener('click', showCard))
+
+// 8 animated text
+
+const modal8 = document.querySelector('.modal')
+const input8 = document.querySelector('.modal-input')
+const modalBtn8 = document.querySelector('.modal-btn8')
+const saveBtn8 = document.querySelector('.save-btn8')
+const text8 = document.querySelector('.text8')
+const errorMsg8 = document.querySelector('.error-msg')
+
+let inputValue8 = 'To jest testowa wiadomość'
+let timeout8
+let index8 = 1
+let speed8 = 80
+
+const writingAnimation8 = () => {
+    text8.innerHTML = inputValue8.slice(0, index8)
+
+    index8++
+
+    if (index8 > inputValue8.length) return
+
+    timeout8 = setTimeout(writingAnimation8, speed8)
+}
+
+const showModal8 = () => {
+    modal8.classList.add('active8')
+}
+
+const closeModal8 = () => {
+    if (input8.value == '') {
+        errorMsg8.textContent = 'Wprowadź tekst'
+        return
+    }
+
+    inputValue8 = input8.value
+    modal8.classList.remove('active8')
+    clearStuff8()
+    writingAnimation8()
+}
+
+const clearStuff8 = () => {
+    index8 = 1
+    clearTimeout(timeout8)
+    input8.value = ''
+    errorMsg8.textContent = ''
+}
+
+modalBtn8.addEventListener('click', showModal8)
+saveBtn8.addEventListener('click', closeModal8)
+
+writingAnimation8()
