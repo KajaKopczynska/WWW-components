@@ -277,12 +277,12 @@ cards.forEach(card => card.addEventListener('click', showCard))
 
 // 8 animated text
 
-const modal8 = document.querySelector('.modal')
-const input8 = document.querySelector('.modal-input')
+const modal8 = document.querySelector('.modal8')
+const input8 = document.querySelector('.modal-input8')
 const modalBtn8 = document.querySelector('.modal-btn8')
 const saveBtn8 = document.querySelector('.save-btn8')
 const text8 = document.querySelector('.text8')
-const errorMsg8 = document.querySelector('.error-msg')
+const errorMsg8 = document.querySelector('.error-msg8')
 
 let inputValue8 = 'To jest testowa wiadomość'
 let timeout8
