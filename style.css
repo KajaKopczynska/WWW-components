@@ -648,3 +648,77 @@ p {
 .text8 {
 	margin-top: 50px;
 }
+
+/* 9 gift list */
+
+.section9 {
+	background-color: #378b29;
+	background-image: linear-gradient(315deg, #378b29 0%, #74d680 74%);
+}
+
+h1 {
+	margin: 1em 0 2em;
+	color: #333;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+.wrapper9 {
+	padding: 2em;
+	background-color: #fff;
+	border-radius: 8px;
+	box-shadow: 10px 10px 10px rgba(0, 0, 0, .4);
+}
+
+.box9 {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	margin: 2em 0;
+	padding: 1em;
+	width: 1000px;
+	height: 200px;
+	border-radius: 8px;
+	background-color: #eee;
+}
+
+.present9 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0.5em;
+	font-size: 3rem;
+	border-radius: 8px;
+	background-color: #fff;
+	border: 1px solid black;
+	transition: background-color .3s;
+	cursor: grab;
+}
+
+.present9:hover {
+	background-color: #eee;
+}
+
+.present-disabled9 {
+	opacity: 0.3;
+	cursor: not-allowed;
+}
+
+.send-btn9 {
+	margin: 0 auto;
+	display: block;
+	padding: 1em 3em;
+	background-color: #74d680;
+	border-radius: 8px;
+	border: none;
+	cursor: pointer;
+}
+
+.send-btn9:disabled {
+	background-color: #ddd;
+}
+
+a {
+	text-decoration: none;
+	color: #000;
+}

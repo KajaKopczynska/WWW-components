@@ -326,3 +326,52 @@ modalBtn8.addEventListener('click', showModal8)
 saveBtn8.addEventListener('click', closeModal8)
 
 writingAnimation8()
+
+// 9 gift list
+
+const presents9 = document.querySelectorAll('.present9')
+const boxes9 = document.querySelectorAll('.box9')
+const presentsBox9 = document.querySelector('.presents-box9')
+const chosenBox9 = document.querySelector('.chosen-box9')
+const sendBtn9 = document.querySelector('.send-btn9')
+
+presents9.forEach(present9 => {
+    present9.addEventListener('dragstart', () => {
+        present9.classList.add('is-dragged9')
+    })
+
+    present9.addEventListener('dragend', () => {
+        present9.classList.remove('is-dragged9')
+    })
+})
+
+boxes9.forEach(box9 => {
+    box9.addEventListener('dragover', e => {
+        e.preventDefault()
+
+        const isDragged9 = document.querySelector('.is-dragged9')
+        box9.appendChild(isDragged9)
+
+        handlePresents9()
+    })
+})
+
+const handlePresents9 = () => {
+    const unchosenPresents9 = presentsBox9.querySelectorAll('.present9')
+
+    if (chosenBox9.childElementCount > 2) {
+        unchosenPresents9.forEach(present9 => {
+            present9.setAttribute('draggable', 'false')
+            present9.classList.add('present-disabled9')
+        })
+
+        sendBtn9.disabled = false
+    } else {
+        unchosenPresents9.forEach(present9 => {
+            present9.setAttribute('draggable', 'true')
+            present9.classList.remove('present-disabled9')
+        })
+
+        sendBtn9.disabled = true
+    }
+}
