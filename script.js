@@ -375,3 +375,41 @@ const handlePresents9 = () => {
         sendBtn9.disabled = true
     }
 }
+
+// 10 counter
+
+const counterItems10 = document.querySelectorAll('.counter10')
+const counterBox10 = document.querySelector('.counter-box10')
+
+const options10 = {
+    rootMargin: '-250px'
+}
+
+const startCounter10 = entry => {
+    console.log(entry[0].isIntersecting);
+
+    if (entry[0].isIntersecting) {
+        counterItems10.forEach(counter10 => {
+
+            const updateCounter10 = () => {
+                const finalNumber10 = counter10.getAttribute('data-number')
+                const value10 = parseInt(counter10.textContent)
+
+                const speed10 = finalNumber10 / 300
+
+                if (value10 < finalNumber10) {
+                    counter10.textContent = `${Math.floor(value10 + speed10)}`
+                    setTimeout(updateCounter10, 1)
+                } else {
+                    counter10.textContent = finalNumber10
+                }
+            }
+
+            updateCounter10()
+
+        })
+    }
+}
+
+const observer10 = new IntersectionObserver(startCounter10, options10)
+observer10.observe(counterBox10)
