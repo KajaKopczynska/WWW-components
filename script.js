@@ -413,3 +413,24 @@ const startCounter10 = entry => {
 
 const observer10 = new IntersectionObserver(startCounter10, options10)
 observer10.observe(counterBox10)
+
+// 12 cookie alert
+
+const cookieBox12 = document.querySelector('.cookie-box12')
+const cookieBtn12 = document.querySelector('.cookie-btn12')
+
+const showCookie12 = () => {
+    const cookieEaten12 = localStorage.getItem('cookie')
+
+    if (cookieEaten12) {
+        cookieBox12.classList.add('hide12')
+    }
+}
+
+const handleCookieBox12 = () => {
+    localStorage.setItem('cookie', 'true')
+    cookieBox12.classList.add('hide12')
+}
+
+cookieBtn12.addEventListener('click', handleCookieBox12)
+showCookie12()
