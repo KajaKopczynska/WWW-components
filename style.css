@@ -822,3 +822,62 @@ a {
 	background-color: #0076e8;
 	content: '';
 }
+
+/* 12 cookie alert */
+
+.hide12 {
+	display: none;
+}
+
+.cookie-box12 {
+	position: fixed;
+	bottom: 0;
+	padding: 1.5em;
+	height: 250px;
+	width: 100%;
+	text-align: center;
+	font-size: 2rem;
+	background-color: #fff;
+	opacity: 0;
+	transform: translateY(100%);
+	animation: show-cookies .5s .5s forwards;
+}
+
+.cookie-box12 p{
+	color: #000;
+	font-size: 26px;
+}
+
+.cookie-box12::before {
+	position: absolute;
+	top: -287px;
+	right: 50px;
+	width: 400px;
+	height: 400px;
+	background-image: url('https://lezebre.lu/images/detailed/26/65626-JDM-Cookie-Monster.png');
+	background-size: cover;
+	content: '';
+}
+
+.cookie-btn12 {
+	margin-top: 1.5em;
+	padding: 0.5em 1em;
+	font-size: 1.6rem;
+	border: 5px solid #232020;
+	border-radius: 3px;
+	color: #fff;
+	background-color: #2890D0;
+	transition: background-color .3s;
+	cursor: pointer;
+}
+
+.cookie-btn12:hover {
+	background-color: #1c6491;
+}
+
+@keyframes show-cookies {
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
